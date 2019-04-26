@@ -111,3 +111,8 @@ resource "aws_codebuild_project" "codebuild_test" {
     "Environment" = "Test"
   }
 }
+
+resource "aws_codebuild_webhook" "codebuild_webhook" {
+  project_name = "${aws_codebuild_project.codebuild_test.name}"
+}
+
