@@ -9,22 +9,20 @@ version: 0.2
      # key: "value"
 
 phases:
-  #install:
-    #commands:
-      # - command
-      # - command
-  #pre_build:
-    #commands:
-      # - command
-      # - command
-  build:
+  install:
     commands:
       - pip install --upgrade setuptools pipenv
+  pre_build:
+    commands:
+      - cd example/src/
       - pipenv install --system --deploy --dev
-  #post_build:
-    #commands:
-      # - command
-      # - command
+  build:
+    commands:
+      - pipenv run pytest
+      - pipenv run flake8 py_pkg
+  post_build:
+    commands:
+      - echo "Post build commands..."
 #artifacts:
   #files:
     # - location
