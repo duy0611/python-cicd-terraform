@@ -19,8 +19,8 @@ phases:
       # - command
   build:
     commands:
-      # - command
-      # - command
+      - pip install --upgrade setuptools pipenv
+      - pipenv install --system --deploy --dev
   #post_build:
     #commands:
       # - command
@@ -32,6 +32,6 @@ phases:
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes
   #base-directory: location
-#cache:
-  #paths:
-    # - paths
+cache:
+  paths:
+    - /root/.cache/pip
