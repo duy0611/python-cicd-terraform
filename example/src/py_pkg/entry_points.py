@@ -40,8 +40,8 @@ def install_template_from_github() -> None:
         return None
 
     # download ZIP archive of GitHub repository
-    url = 'https://github.com/AlexIoannides/' 
-            + 'py-package-template/archive/master.zip'
+    # https://github.com/AlexIoannides/py-package-template/archive/master.zip
+    url = ''
     r = requests.get(url)
     with open('temp.zip', 'wb') as f:
         f.write(r.content)
