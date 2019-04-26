@@ -104,6 +104,7 @@ resource "aws_codebuild_project" "codebuild_test" {
     type            = "GITHUB"
     location        = "https://github.com/duy0611/python-cicd-terraform.git"
     git_clone_depth = 1
+    buildspec       = "example/src/buildspec.yml"
   }
 
   tags = {
